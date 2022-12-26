@@ -11,7 +11,10 @@ on:
 
 env:
   BUILD_TYPE: release
-  FW_VERSION: ${GITHUB_REF##*/}
+  if: ${{ github.event_name == 'release' }}
+    FW_VERSION: ${GITHUB_REF##*/}
+  else:
+    FW_VERSION: vdev
   REPOSITORY_NAME: ${GITHUB_REPOSITORY##*/}
 
 jobs:
