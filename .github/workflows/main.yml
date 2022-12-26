@@ -12,7 +12,6 @@ on:
 env:
   BUILD_TYPE: release
   FW_VERSION: ${{ github.event.release.tag_name }}
-  REPOSITORY_NAME: ${{ github.event.repository.name }}
 
 jobs:
   build:
